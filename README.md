@@ -160,20 +160,7 @@ Reporting Issues
 ----------------
 Report bugs or request features via GitHub Issues. Provide steps to reproduce, expected behavior, and actual behavior.
 
-License
--------
-Add a LICENSE file with the desired license (for example, MIT). This README does not currently include a specific license—please add one as needed.
-
 Contact
 -------
 - Repository owner / maintainer: mayonicee  
 - Group members: see the Members section above  
-- Add email or other contact details here if you want them public.
-
-Final Notes
------------
-This README has been customized for the Android "Library System" project. If you want to:
-- Add screenshots or GIFs of the UI,
-- Include API documentation (Postman collection or endpoint list),
-- Add CI/CD instructions (GitHub Actions, Firebase App Distribution),
-please provide the details and I will update the README accordingly.
