@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:layout_marginBottom="8dp"
+    android:background="#1F2436">
+
+    <ImageView
+        android:id="@+id/imgBorrowCover"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:background="@android:color/darker_gray" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtBorrowBookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book Title"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txtBorrowBorrower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="By Someone · NIM/ID"
+            android:textColor="#BBBBBB"
+            android:textSize="12sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingTop="2dp" />
+
+        <TextView
+            android:id="@+id/txtBorrowStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PENDING"
+            android:textColor="#FFCC80"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:padding="3dp"
+            android:layout_marginTop="4dp"
+            android:background="#33222222" />
+
+        <TextView
+            android:id="@+id/txtBorrowDue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Due: 23 Dec 2025 · INSIDE"
+            android:textColor="#CCCCCC"
+            android:textSize="11sp"
+            android:paddingTop="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:paddingTop="6dp">
+
+            <Button
+                android:id="@+id/btnReject"
+                android:layout_width="10dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+
+             android:maxLines="1"
+                android:text="Reject"
+                android:textSize="7dp" />
+
+            <Button
+                android:id="@+id/btnApprove"
+                android:layout_width="10dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+
+                android:maxLines="1"
+                android:text="Approve"
+                android:textSize="7dp"  />
+
+            <Button
+                android:id="@+id/btnMarkReturned"
+                android:layout_width="10dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+
+                android:maxLines="1"
+                android:text="Returned"
+                android:textSize="7dp"  />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

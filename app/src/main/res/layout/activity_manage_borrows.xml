@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#151829"
+    tools:context=".ManageBorrowsActivity">
+
+    <TextView
+        android:id="@+id/txtTitleReviewLoans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Review Loans"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:paddingBottom="8dp" />
+
+    <TextView
+        android:id="@+id/txtSubtitleReviewLoans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List semua peminjaman dari semua user"
+        android:textSize="13sp"
+        android:textColor="#BBBBBB"
+        android:paddingBottom="12dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBorrowList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="4dp"
+        android:clipToPadding="false" />
+
+    <TextView
+        android:id="@+id/txtEmptyState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Belum ada data peminjaman."
+        android:textColor="#AAAAAA"
+        android:textSize="14sp"
+        android:gravity="center_horizontal"
+        android:paddingTop="8dp"
+        android:visibility="gone" />
+
+</LinearLayout>

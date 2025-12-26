@@ -1,0 +1,72 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // =================== HELPER: CEK ADMIN ===================
+    function isAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin"
+          || get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "super_admin"
+        );
+    }
+
+    // =================== BOOKS ===================
+    match /books/{bookId} {
+      // semua orang boleh baca buku
+      allow read: if true;
+
+      // hanya admin/super_admin boleh create/update/delete buku
+      allow write: if isAdmin();
+    }
+
+    // =================== CATEGORIES ===================
+    match /categories/{catId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // =================== USERS + SUBCOLLECTIONS ===================
+    match /users/{userId} {
+
+      // user sendiri ATAU admin/super_admin boleh read & update
+      allow read, update: if request.auth != null &&
+                          (request.auth.uid == userId || isAdmin());
+
+      // user boleh create dokumen user milik sendiri (saat register)
+      allow create: if request.auth != null && request.auth.uid == userId;
+
+      // ---- SUBCOLLECTION: borrow ----
+      match /borrow/{borrowId} {
+        // user yang bersangkutan boleh create/read/update peminjaman miliknya
+        allow create, read, update: if request.auth != null && request.auth.uid == userId;
+
+        // admin / super_admin boleh read & update juga (ManageBorrowsActivity)
+        allow read, update: if isAdmin();
+      }
+
+      // ---- SUBCOLLECTION: collections (BOOKMARK / COLLECTION) ----
+      match /collections/{colId} {
+        // user boleh manage koleksinya sendiri
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+
+        // (opsional) kalau mau admin bisa lihat semua koleksi:
+        // allow read: if isAdmin();
+      }
+    }
+
+    // =================== COLLECTION GROUP: "borrow" ===================
+    // WAJIB kalau pakai db.collectionGroup("borrow")
+    match /{path=**}/borrow/{borrowId} {
+      // hanya admin/super_admin yang boleh pakai collectionGroup("borrow")
+      // → dipakai di ManageBorrowsActivity untuk lihat semua peminjaman
+      allow read, update: if isAdmin();
+    }
+
+    // =================== DEFAULT: BLOCK LAINNYA ===================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

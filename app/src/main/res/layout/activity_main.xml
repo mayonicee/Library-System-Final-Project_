@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Konten utama (dashboard) -->
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#151829">
+
+        <!-- HEADER: Avatar + Greeting -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/imgAvatarHome"
+                android:layout_width="48dp"
+                android:layout_height="42dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="User avatar"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher_round" />
+
+            <TextView
+                android:id="@+id/txtGreeting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="12dp"
+                android:text="Hello, User!"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <!-- SEARCH -->
+        <EditText
+            android:id="@+id/edtSearch"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_search"
+            android:hint="Search by book title, author, etc"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#99FFFFFF"
+
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:singleLine="true" />
+
+
+        <!-- TOP AVAILABLE -->
+        <TextView
+            android:id="@+id/txtTopTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avaialable For You!"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopBooks"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:orientation="horizontal"
+            android:clipToPadding="false"/>
+
+        <!-- GENRES -->
+        <TextView
+            android:id="@+id/txtGenresTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pick from category"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGenres"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:clipToPadding="false"/>
+
+        <!-- RECENT BORROWS -->
+        <TextView
+            android:id="@+id/txtRecentTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your recently borrowed books"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecentBorrow"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal"
+            android:clipToPadding="false"/>
+
+        <!-- spacer buat bottom nav -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+    </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <!-- FAB Scan di tengah bawah -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabScan"
+        android:layout_width="58dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="8dp"
+        android:paddingEnd="0dp"
+        android:src="@drawable/ic_qr_code_scanner_24"
+        android:tint="@android:color/white"
+        app:backgroundTint="@color/white"
+        app:borderWidth="0dp"
+        app:layout_anchor="@id/bottom_nav"
+        app:layout_anchorGravity="top|center_horizontal"
+        app:maxImageSize="50dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F8"
+    tools:context=".LibraryActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="72dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Header -->
+            <TextView
+                android:id="@+id/txtLibraryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Library"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#222222"
+                android:paddingBottom="8dp" />
+
+            <!-- Genre / Category (horizontal) -->
+            <TextView
+                android:id="@+id/txtGenreLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#444444"
+                android:paddingBottom="4dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLibraryGenres"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="8dp"
+                android:clipToPadding="false" />
+
+            <!-- Books by selected genre (horizontal) -->
+            <TextView
+                android:id="@+id/txtBooksLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Books"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#444444"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLibraryBooks"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:clipToPadding="false"
+                android:paddingBottom="8dp"
+                tools:listitem="@layout/item_similar_book" />
+
+            <TextView
+                android:id="@+id/txtEmptyLibrary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No books found."
+                android:textAlignment="center"
+                android:textColor="#777777"
+                android:visibility="gone"
+                android:paddingTop="16dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabScan"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_qr_code_scanner_24"
+        android:tint="@android:color/white"
+        app:backgroundTint="@color/white"
+        app:borderWidth="0dp"
+        app:maxImageSize="32dp"
+        app:layout_anchor="@id/bottom_nav"
+        app:layout_anchorGravity="top|center_horizontal"
+        android:contentDescription="@string/app_name" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

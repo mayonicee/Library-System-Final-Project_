@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "130658177064",
+    "project_id": "perpustakaan-725f0",
+    "storage_bucket": "perpustakaan-725f0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130658177064:android:bf7867db1639e97c13a51d",
+        "android_client_info": {
+          "package_name": "com.example.scanqr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8QZS8wuRp5OCULgPTjgyu44fh9A-YPow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130658177064:android:5ba4092d78ecb0f413a51d",
+        "android_client_info": {
+          "package_name": "perpusatakan.mp_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8QZS8wuRp5OCULgPTjgyu44fh9A-YPow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

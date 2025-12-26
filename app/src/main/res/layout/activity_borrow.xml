@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F3F4F8"
+    tools:context=".BorrowActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Info buku -->
+        <TextView
+            android:id="@+id/txtBorrowBookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book title"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#222222"
+            android:paddingBottom="4dp" />
+
+        <TextView
+            android:id="@+id/txtBorrowBookAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="By Author"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            android:paddingBottom="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Form -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Borrower Information"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            android:paddingBottom="8dp" />
+
+        <EditText
+            android:id="@+id/edtBorrowerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your full name"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/edtBorrowerId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Student ID / Member ID"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/edtGuarantee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Guarantee (e.g., KTP, KTM)"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/edtDurationDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Borrow duration (days)"
+            android:inputType="number"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Location type pakai radio button -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location type"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            android:paddingBottom="4dp" />
+
+        <RadioGroup
+            android:id="@+id/rgLocationType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rbInside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INSIDE"
+                android:paddingEnd="24dp" />
+
+            <RadioButton
+                android:id="@+id/rbOutside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OUTSIDE" />
+        </RadioGroup>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancelBorrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:layout_marginEnd="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmitBorrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit Borrow"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#FF5252"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

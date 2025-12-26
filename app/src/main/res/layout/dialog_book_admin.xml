@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edtBookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Title"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/edtBookAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Author"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/edtBookYear"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Year"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/edtBookIsbn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="ISBN"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/edtBookCategoryId"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Category ID"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/edtBookSynopsis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="3"
+            android:gravity="top"
+            android:hint="Synopsis"
+            android:layout_marginBottom="6dp" />
+
+        <!-- PREVIEW COVER -->
+
+        <ImageView
+            android:id="@+id/imgBookCoverPreview"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+        <Button
+            android:id="@+id/btnPickCover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pick cover from gallery"
+            android:layout_marginBottom="6dp" />
+
+        <!-- URL auto diisi setelah upload ke storage -->
+        <EditText
+            android:id="@+id/edtBookCoverUrl"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Cover URL"
+            android:inputType="textUri"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/edtBookTotalCopies"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Total copies"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/edtBookAvailableCopies"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Available copies"
+            android:inputType="number"
+            android:layout_marginBottom="6dp" />
+
+    </LinearLayout>
+
+</ScrollView>
